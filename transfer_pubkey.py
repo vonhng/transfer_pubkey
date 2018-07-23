@@ -4,7 +4,7 @@
 @version: 2.7.10
 @author: vonhng
 @contact: vonhng@qq.com
-@file: transfer.py
+@file: transfer_pubkey.py
 @time: 2018/7/13
 """
 import subprocess
