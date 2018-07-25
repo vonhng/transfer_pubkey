@@ -49,7 +49,7 @@ Switches:
 
     -i, --ip IPS:str remote ips,use '/' to split  # 可以一次传输到多个节点，节点ip以'/'隔开
 
-    -p, --password PWD:str password  # 远端用户密码，可以不填，默认为cljslrl0620
+    -p, --password PWD:str password  # 远端用户密码，可以不填，默认为xxxxxxxx
 
     -u, --user USER:str user  # 远端用户账号，可以不填，默认为root
 
