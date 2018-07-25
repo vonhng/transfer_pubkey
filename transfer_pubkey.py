@@ -7,6 +7,7 @@
 @file: transfer_pubkey.py
 @time: 2018/7/13
 """
+import os
 import subprocess
 import paramiko
 from plumbum import cli, colors
@@ -74,7 +75,11 @@ class Transfer(cli.Application):
         self._pwd = pwd
 
     def main(self):
-        pubkey = run_cmd(["cat", "/Users/vonhng/.ssh/id_rsa.pub"])  # 修改这个路径
+        try:
+            pubkey = os.environ["PUBKEY_PATH"]
+        except KeyError as e:
+            print colors.red | "[ ERROR ] Please export {}".format(e)
+            return
         cmd = "echo '{}' >> /root/.ssh/authorized_keys".format(pubkey)
         remote_ips = self._ips.split("/")
         for remote_ip in remote_ips:

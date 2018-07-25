@@ -19,7 +19,7 @@ pip install subprocess
 
 ### 3. 使用
 
-vim打开脚本，修改本地需要上传的key的path，
+首先引入公钥存放的路径PUBKEY_PATH `export PUBKEY_PATH=/Users/vonhng/.ssh/id_rsa.pub`
 
 ```
 
@@ -81,13 +81,7 @@ transfer pubkey --> 10.10.100.6
 
 ### 5. TODO
 
-#### a. 解决变量问题
-
- key_path 使用环境变量传输，不再需要手动修改脚本
-
- 如：`export KEY_PATH=/Users/vonhng/.ssh/id_rsa.pub`
-
-#### b. 谢绝依赖
+#### 谢绝依赖
 
 1). 基于第一点完成后制作成二进制文件
 
