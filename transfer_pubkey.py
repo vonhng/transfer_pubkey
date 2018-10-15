@@ -76,7 +76,8 @@ class Transfer(cli.Application):
 
     def main(self):
         try:
-            pubkey = os.environ["PUBKEY_PATH"]
+            pubkey_path = os.environ["PUBKEY_PATH"]
+            pubkey = run_cmd(["cat", pubkey_path])
         except KeyError as e:
             print colors.red | "[ ERROR ] Please export {}".format(e)
             return
